@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(SolutionDir)\props\common0.props" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D4A48EFA-C207-44E3-8BAA-46DE493BECB2}</ProjectGuid>
+    <RootNamespace>SkDriver</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(SolutionDir)\props\lib.props" />
+  <Import Project="$(SolutionDir)\props\common1.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(SolutionDir)\props\common2.props" />
+  <ItemGroup>
+    <ProjectReference Include="..\SkBase\SkBase.vcxproj">
+      <Project>{7c71180e-d7ce-4a7f-8f98-fce13855d46f}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="crt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkDriver\nt\Driver_nt.hxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="crt.cxx" />
+    <ClCompile Include="nt\Driver_nt.cxx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

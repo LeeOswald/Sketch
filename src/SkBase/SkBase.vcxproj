@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(SolutionDir)\props\common0.props" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7c71180e-d7ce-4a7f-8f98-fce13855d46f}</ProjectGuid>
+    <RootNamespace>SkBase</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(SolutionDir)\props\lib.props" />
+  <Import Project="$(SolutionDir)\props\common1.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(SolutionDir)\props\common2.props" />
+  <ItemDefinitionGroup Condition="'$(SkSubsystem)' == 'nt'">
+    <Lib>
+      <AdditionalDependencies>$(DDK_LIB_PATH)\libcntpr.lib;$(DDK_LIB_PATH)\ksecdd.lib;$(DDK_LIB_PATH)\netio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(SkSubsystem)' == 'win32'">
+    <Lib>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Heap_impl.hxx" />
+    <ClInclude Include="Net_impl.hxx" />
+    <ClInclude Include="Random_impl.hxx" />
+    <ClInclude Include="Trace.NetSink_impl.hxx" />
+    <ClInclude Include="Trace_impl.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\Sketch.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Algorithm.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Allocator.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Array.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Assert.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Atomic.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\AtomicOps.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\CircularBuffer.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\CircularBuffer_details.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Date.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Empty.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Error.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\ErrorState.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Event.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Exception.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\functional.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\HashMap.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\HashMap_details.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Heap.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Heap.Debug.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Heap.Generic.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Heap.Page.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\IDelegate.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\init.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\IntrusiveList.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\IoRequest.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\IRefCounted.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\iterator.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\limits.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\murmurhash.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Mutex.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Net.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\new.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\NonCopyable.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Pair.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Process.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Queue.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Random.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\RefCount.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Rundown.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\RwLock.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\SharedData.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Spinlock.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Stopwatch.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\String.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\System.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Thread.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Time.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Timer.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\TimeSpan.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Trace.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Trace.NetSink.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\type_traits.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\type_traits_fwd.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Types.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\UniquePtr.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Utf8String.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Utility.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\Vector.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\msvc\type_traits_msvc.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\msvc\tt_isfunc.inl" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\msvc\tt_isfuncc.inl" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\msvc\tt_ismemptr.inl" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(SkSubsystem)' == 'nt'">
+    <ClInclude Include="nt\Net_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Allocator_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\AnsiString_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Atomic_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\AtomicOps_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\ComClass.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\ComPtr_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\CriticalRegion.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Error_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Float_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\GuardedRegion_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Heap.Generic_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Heap.Page_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\new_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\os_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Process_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Registry.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\RwLock_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Spinlock_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Stopwatch_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\System_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Thread_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Timer_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Types_nt.hxx" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(SkSubsystem)' == 'win32'">
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\Error_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\Heap.Generic_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\Heap.Page_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\os_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\Process_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\RwLock_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\Spinlock_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\Stopwatch_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\System_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\Thread_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\win32\Timer_win32.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\AnsiString_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Atomic_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\AtomicOps_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\ComClass.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\ComPtr.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Error_nt.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Registry.hxx" />
+    <ClInclude Include="$(SkIncludeDir)\SkBase\nt\Types_nt.hxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Error.cxx" />
+    <ClCompile Include="Exception.cxx" />
+    <ClCompile Include="Heap.cxx" />
+    <ClCompile Include="init.cxx" />
+    <ClCompile Include="System.cxx" />
+    <ClCompile Include="Time.cxx" />
+    <ClCompile Include="Trace.cxx" />
+    <ClCompile Include="Trace.NetSink_impl.cxx" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(SkSubsystem)' == 'nt'">
+    <ClCompile Include="nt\Date_nt.cxx" />
+    <ClCompile Include="nt\Error_nt.cxx" />
+    <ClCompile Include="nt\Event_nt.cxx" />
+    <ClCompile Include="nt\Mutex_nt.cxx" />
+    <ClCompile Include="nt\Net_nt.cxx" />
+    <ClCompile Include="nt\new_nt.cxx" />
+    <ClCompile Include="nt\Random_nt.cxx" />
+    <ClCompile Include="nt\Registry.cxx" />
+    <ClCompile Include="nt\System_nt.cxx" />
+    <ClCompile Include="nt\Thread_nt.cxx" />
+    <ClCompile Include="nt\Time_nt.cxx" />
+    <ClCompile Include="nt\Trace.NetSink_nt.cxx" />
+    <ClCompile Include="nt\Trace_nt.cxx" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(SkSubsystem)' == 'win32'">
+    <ClCompile Include="nt\Registry.cxx" />
+    <ClCompile Include="win32\Date_win32.cxx" />
+    <ClCompile Include="win32\Error_win32.cxx" />
+    <ClCompile Include="win32\Event_win32.cxx" />
+    <ClCompile Include="win32\Mutex_win32.cxx" />
+    <ClCompile Include="win32\Net_win32.cxx" />
+    <ClCompile Include="win32\Random_win32.cxx" />
+    <ClCompile Include="win32\System_win32.cxx" />
+    <ClCompile Include="win32\Thread_win32.cxx" />
+    <ClCompile Include="win32\Time_win32.cxx" />
+    <ClCompile Include="win32\Trace.NetSink_win32.cxx" />
+    <ClCompile Include="win32\Trace_win32.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\3rd_party\jansson\jansson.vcxproj">
+      <Project>{81634db6-ab06-41d1-a0fc-e40c77abb699}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

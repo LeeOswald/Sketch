@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(SolutionDir)\props\common0.props" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{81634DB6-AB06-41D1-A0FC-E40C77ABB699}</ProjectGuid>
+    <RootNamespace>jansson</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(SolutionDir)\props\lib.props" />
+  <Import Project="$(SolutionDir)\props\common1.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(SolutionDir)\props\common2.props" />
+  <ItemGroup>
+    <ClInclude Include="sk_jansson.hxx" />
+    <ClInclude Include="jansson_port.h" />
+    <ClInclude Include="src/hashtable.h" />
+    <ClInclude Include="src/jansson.h" />
+    <ClInclude Include="src/jansson_config.h" />
+    <ClInclude Include="src/jansson_private.h" />
+    <ClInclude Include="src/lookup3.h" />
+    <ClInclude Include="src/strbuffer.h" />
+    <ClInclude Include="src/utf.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="jansson_port.cxx" />
+    <ClCompile Include="src/dump.c" />
+    <ClCompile Include="src/error.c" />
+    <ClCompile Include="src/hashtable.c" />
+    <ClCompile Include="src/hashtable_seed.c" />
+    <ClCompile Include="src/load.c" />
+    <ClCompile Include="src/memory.c" />
+    <ClCompile Include="src/pack_unpack.c" />
+    <ClCompile Include="src/strbuffer.c" />
+    <ClCompile Include="src/utf.c" />
+    <ClCompile Include="src/value.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(SolutionDir)\props\common0.props" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B97BAF5F-7287-4315-950E-FB7BB462804A}</ProjectGuid>
+    <RootNamespace>SkBase_test</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(SolutionDir)\props\sys.props" Condition="$(Configuration.Contains('NT'))" />
+  <Import Project="$(SolutionDir)\props\exe.props" Condition="$(Configuration.Contains('WIN32'))" />
+  <Import Project="$(SolutionDir)\props\common1.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(SolutionDir)\props\common2.props" />
+  <ItemDefinitionGroup Condition="'$(SkSubsystem)' == 'nt'">
+    <Link>
+      <AdditionalOptions>/ignore:4210 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(OutDir)SkBase.lib;$(DDK_LIB_PATH)\libcntpr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup Condition="'$(SkSubsystem)' == 'nt'">
+    <ProjectReference Include="..\..\src\SkDriver\SkDriver.vcxproj">
+      <Project>{d4a48efa-c207-44e3-8baa-46de493becb2}</Project>
+    </ProjectReference>  
+  </ItemGroup>
+  <ItemGroup Condition="'$(SkSubsystem)' == 'win32'">
+    <ProjectReference Include="..\..\src\SkConsoleApp\SkConsoleApp.vcxproj">
+      <Project>{3ad5ace8-9824-465e-850f-0a3e887667d4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\SkUser\SkUser.vcxproj">
+      <Project>{9843dd5f-5b2b-47c4-a577-7f2c4f4e7fa3}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SkBase\SkBase.vcxproj">
+      <Project>{7c71180e-d7ce-4a7f-8f98-fce13855d46f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\SkTest\SkTest.vcxproj">
+      <Project>{f275e4bc-b826-4c2a-b38b-88322784f2a2}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnsiString_test.cpp" />
+    <ClCompile Include="CircularBuffer_test.cpp" />
+    <ClCompile Include="Error_test.cpp" />
+    <ClCompile Include="Float_test.cpp" />
+    <ClCompile Include="HashMap_test.cpp" />
+    <ClCompile Include="Heap_test.cpp" />
+    <ClCompile Include="IntrusiveList_test.cpp" />
+    <ClCompile Include="module.cpp" />
+    <ClCompile Include="Net_test.cpp" />
+    <ClCompile Include="Queue_test.cpp" />
+    <ClCompile Include="Registry_test.cpp" />
+    <ClCompile Include="Stopwatch_test.cpp" />
+    <ClCompile Include="String_test.cpp" />
+    <ClCompile Include="Thread_test.cpp" />
+    <ClCompile Include="Timer_test.cpp" />
+    <ClCompile Include="Trace_test.cpp" />
+    <ClCompile Include="UniquePtr_test.cpp" />
+    <ClCompile Include="Utf8String_test.cpp" />
+    <ClCompile Include="Vector_test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common.h" />
+    <ClInclude Include="Doll.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

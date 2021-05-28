@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <SkDir>$(SolutionDir)\..\..\</SkDir>
+    <SkSrcDir>$(SkDir)\src\</SkSrcDir>
+    <SkIncludeDir>$(SkDir)\include\</SkIncludeDir>
+    <SkThirdPartyDir>$(SkDir)\3rd_party\</SkThirdPartyDir>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)..\..\bin\$(SkSubsystem)\$(Configuration)_$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\tmp\$(ProjectName)\$(SkSubsystem)\$(Configuration)_$(Platform)\</IntDir>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  
+  <ItemDefinitionGroup Condition="'$(SkSubsystem)' == 'nt'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SkIncludeDir);$(SkThirdPartyDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>KERNEL_MODE;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  
+  <ItemDefinitionGroup Condition="'$(SkSubsystem)' == 'win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SkIncludeDir);$(SkThirdPartyDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USER_MODE;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+ 
+  <ItemDefinitionGroup Condition="$(Configuration.Contains('Debug'))">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="$(Configuration.Contains('Release'))">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  
+</Project>

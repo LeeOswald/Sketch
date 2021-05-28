@@ -1,0 +1,11 @@
+- lock-free heap
+- check UTF-8 algorithms; Utf8String tests with UTF-8 data; same for UTF-16
+- PAGED_CODE() where appropriate
+- change wchar_t to UChar where appropriate
+- verify ErrorState vs Exception usage and noexcept
+- replace p/impl with interfaces?
+- alertable waits in IO?
+- verify IRefCounted usage: which classes don't really need reference counting
+- check for what is already in WDK km\crt
+
+

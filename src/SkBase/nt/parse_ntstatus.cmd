@@ -1,0 +1,1 @@
+python parse_ntstatus.py -in ntstatus.h -out ntstatus.inl

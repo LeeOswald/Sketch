@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup Condition="$(Configuration.Contains('Debug'))" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('Release'))" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(Configuration.Contains('WIN32'))" Label="Configuration">
+    <PlatformToolset>WindowsApplicationForDrivers10.0</PlatformToolset>
+    <SkSubsystem>win32</SkSubsystem>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('NT'))" Label="Configuration">
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <SkSubsystem>nt</SkSubsystem>
+  </PropertyGroup>
+  
+  <PropertyGroup Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  
+</Project>

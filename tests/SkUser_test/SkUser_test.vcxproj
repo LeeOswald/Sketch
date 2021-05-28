@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(SolutionDir)\props\common0.props" />
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{87D93B69-F311-495B-87B0-9DC7C2EE1DC6}</ProjectGuid>
+    <RootNamespace>SkUser_test</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(SolutionDir)\props\exe.props" />
+  <Import Project="$(SolutionDir)\props\common1.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(SolutionDir)\props\common2.props" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SkBase\SkBase.vcxproj">
+      <Project>{7c71180e-d7ce-4a7f-8f98-fce13855d46f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\SkConsoleApp\SkConsoleApp.vcxproj">
+      <Project>{3ad5ace8-9824-465e-850f-0a3e887667d4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\SkTest\SkTest.vcxproj">
+      <Project>{f275e4bc-b826-4c2a-b38b-88322784f2a2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\SkUser\SkUser.vcxproj">
+      <Project>{9843dd5f-5b2b-47c4-a577-7f2c4f4e7fa3}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CommandLine_test.cpp" />
+    <ClCompile Include="Console_test.cpp" />
+    <ClCompile Include="module.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
